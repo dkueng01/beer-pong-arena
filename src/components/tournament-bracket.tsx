@@ -119,7 +119,7 @@ export function TournamentBracket({
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-foreground">{completedMatches}</p>
-                    <p className="text-xs text-muted-foreground">Abgeschlossen</p>
+                    <p className="text-xs text-muted-foreground">Gespielt</p>
                   </div>
                 </CardContent>
               </Card>
