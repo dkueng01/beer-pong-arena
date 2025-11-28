@@ -27,7 +27,7 @@ export function MatchCard({ match, player1, player2, onSelectWinner, isFinal }: 
 
   if (isByeMatch && byeWinner) {
     return (
-      <Card className="bg-secondary/30 border-border/50">
+      <Card className="bg-secondary/30 border-border/50 p-0">
         <CardContent className="p-3">
           <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
             <div className="flex items-center gap-2">
@@ -43,13 +43,12 @@ export function MatchCard({ match, player1, player2, onSelectWinner, isFinal }: 
 
   return (
     <Card
-      className={`transition-all ${
-        isFinal
-          ? "bg-accent/5 border-accent/50 ring-1 ring-accent/20"
-          : canPlay
-            ? "bg-card border-primary/30 ring-1 ring-primary/10"
-            : "bg-card border-border"
-      } ${match.isComplete ? "opacity-80" : ""}`}
+      className={`p-0 transition-all ${isFinal
+        ? "bg-accent/5 border-accent/50 ring-1 ring-accent/20"
+        : canPlay
+          ? "bg-card border-primary/30 ring-1 ring-primary/10"
+          : "bg-card border-border"
+        } ${match.isComplete ? "opacity-80" : ""}`}
     >
       <CardContent className="p-3">
         {canPlay && (
@@ -64,22 +63,20 @@ export function MatchCard({ match, player1, player2, onSelectWinner, isFinal }: 
             type="button"
             onClick={() => player1 && handleSelectWinner(player1.id)}
             disabled={!canPlay}
-            className={`w-full flex items-center justify-between p-3 rounded-lg transition-all ${
-              match.winnerId === player1?.id
-                ? "bg-green-500/20 border border-green-500/50"
-                : "bg-secondary/50 border border-transparent"
-            } ${canPlay ? "hover:bg-primary/10 hover:border-primary/40 cursor-pointer" : ""}`}
+            className={`w-full flex items-center justify-between p-3 rounded-lg transition-all ${match.winnerId === player1?.id
+              ? "bg-green-500/20 border border-green-500/50"
+              : "bg-secondary/50 border border-transparent"
+              } ${canPlay ? "hover:bg-primary/10 hover:border-primary/40 cursor-pointer" : ""}`}
           >
             <div className="flex items-center gap-2 min-w-0 flex-1">
               {match.winnerId === player1?.id && <Trophy className="h-4 w-4 text-green-500 shrink-0" />}
               <span
-                className={`truncate text-sm font-medium ${
-                  player1
-                    ? match.winnerId === player1?.id
-                      ? "text-green-500"
-                      : "text-foreground"
-                    : "text-muted-foreground italic"
-                }`}
+                className={`truncate text-sm font-medium ${player1
+                  ? match.winnerId === player1?.id
+                    ? "text-green-500"
+                    : "text-foreground"
+                  : "text-muted-foreground italic"
+                  }`}
               >
                 {player1?.name || "Wartend..."}
               </span>
@@ -96,22 +93,20 @@ export function MatchCard({ match, player1, player2, onSelectWinner, isFinal }: 
             type="button"
             onClick={() => player2 && handleSelectWinner(player2.id)}
             disabled={!canPlay}
-            className={`w-full flex items-center justify-between p-3 rounded-lg transition-all ${
-              match.winnerId === player2?.id
-                ? "bg-green-500/20 border border-green-500/50"
-                : "bg-secondary/50 border border-transparent"
-            } ${canPlay ? "hover:bg-primary/10 hover:border-primary/40 cursor-pointer" : ""}`}
+            className={`w-full flex items-center justify-between p-3 rounded-lg transition-all ${match.winnerId === player2?.id
+              ? "bg-green-500/20 border border-green-500/50"
+              : "bg-secondary/50 border border-transparent"
+              } ${canPlay ? "hover:bg-primary/10 hover:border-primary/40 cursor-pointer" : ""}`}
           >
             <div className="flex items-center gap-2 min-w-0 flex-1">
               {match.winnerId === player2?.id && <Trophy className="h-4 w-4 text-green-500 shrink-0" />}
               <span
-                className={`truncate text-sm font-medium ${
-                  player2
-                    ? match.winnerId === player2?.id
-                      ? "text-green-500"
-                      : "text-foreground"
-                    : "text-muted-foreground italic"
-                }`}
+                className={`truncate text-sm font-medium ${player2
+                  ? match.winnerId === player2?.id
+                    ? "text-green-500"
+                    : "text-foreground"
+                  : "text-muted-foreground italic"
+                  }`}
               >
                 {player2?.name || "Wartend..."}
               </span>

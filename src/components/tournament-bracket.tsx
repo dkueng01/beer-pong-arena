@@ -112,7 +112,7 @@ export function TournamentBracket({
             </div>
 
             <div className="grid grid-cols-3 gap-3 mb-6">
-              <Card className="bg-card border-border">
+              <Card className="bg-card border-border p-0">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="h-10 w-10 rounded-lg bg-green-500/10 flex items-center justify-center">
                     <CheckCircle2 className="h-5 w-5 text-green-500" />
@@ -123,7 +123,7 @@ export function TournamentBracket({
                   </div>
                 </CardContent>
               </Card>
-              <Card className="bg-card border-border">
+              <Card className="bg-card border-border p-0">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
                     <Swords className="h-5 w-5 text-primary" />
@@ -134,7 +134,7 @@ export function TournamentBracket({
                   </div>
                 </CardContent>
               </Card>
-              <Card className="bg-card border-border">
+              <Card className="bg-card border-border p-0">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="h-10 w-10 rounded-lg bg-muted/50 flex items-center justify-center">
                     <Clock className="h-5 w-5 text-muted-foreground" />
@@ -147,7 +147,7 @@ export function TournamentBracket({
               </Card>
             </div>
 
-            <Card className="bg-card border-border overflow-hidden">
+            <Card className="bg-card border-border overflow-hidden p-0 gap-0">
               <div className="p-4 border-b border-border bg-secondary/30">
                 <h3 className="font-medium text-foreground">Turnierbaum</h3>
               </div>
@@ -164,13 +164,12 @@ export function TournamentBracket({
                     return (
                       <div key={round} className="flex flex-col min-w-[220px]">
                         <div
-                          className={`text-center mb-4 px-4 py-2.5 rounded-lg ${
-                            isFinal
-                              ? "bg-accent text-accent-foreground font-bold"
-                              : isSemiFinal
-                                ? "bg-primary/10 text-primary font-medium"
-                                : "bg-secondary text-secondary-foreground"
-                          }`}
+                          className={`text-center mb-4 px-4 py-2.5 rounded-lg ${isFinal
+                            ? "bg-accent text-accent-foreground font-bold"
+                            : isSemiFinal
+                              ? "bg-primary/10 text-primary font-medium"
+                              : "bg-secondary text-secondary-foreground"
+                            }`}
                         >
                           <span className="text-sm">{getRoundName(round, tournament.totalRounds)}</span>
                         </div>

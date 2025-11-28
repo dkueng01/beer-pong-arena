@@ -68,14 +68,13 @@ function GroupCard({ group, tournament, onSelectWinner }: GroupCardProps) {
   const pendingMatches = group.matches.filter((m) => !m.isComplete)
 
   return (
-    <Card className={`bg-card border-border overflow-hidden ${isComplete ? "ring-2 ring-primary/50" : ""}`}>
+    <Card className={`bg-card border-border p-0 gap-0 overflow-hidden ${isComplete ? "ring-2 ring-primary/50" : ""}`}>
       {/* Group Header */}
       <div className="flex items-center justify-between p-4 bg-secondary/30 border-b border-border">
         <div className="flex items-center gap-3">
           <div
-            className={`flex items-center justify-center w-8 h-8 rounded-lg font-bold text-sm ${
-              isComplete ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
-            }`}
+            className={`flex items-center justify-center w-8 h-8 rounded-lg font-bold text-sm ${isComplete ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
+              }`}
           >
             {group.name.replace("Gruppe ", "")}
           </div>
@@ -122,9 +121,8 @@ function GroupCard({ group, tournament, onSelectWinner }: GroupCardProps) {
                       >
                         <td className="p-2">
                           <span
-                            className={`flex items-center justify-center w-5 h-5 rounded text-xs font-bold ${
-                              isAdvancing ? "bg-primary text-primary-foreground" : "text-muted-foreground"
-                            }`}
+                            className={`flex items-center justify-center w-5 h-5 rounded text-xs font-bold ${isAdvancing ? "bg-primary text-primary-foreground" : "text-muted-foreground"
+                              }`}
                           >
                             {index + 1}
                           </span>
@@ -159,21 +157,19 @@ function GroupCard({ group, tournament, onSelectWinner }: GroupCardProps) {
                 return (
                   <div
                     key={match.id}
-                    className={`flex items-center rounded-lg border ${
-                      match.isComplete ? "border-border bg-muted/30" : "border-primary/30 bg-primary/5"
-                    }`}
+                    className={`flex items-center rounded-lg border ${match.isComplete ? "border-border bg-muted/30" : "border-primary/30 bg-primary/5"
+                      }`}
                   >
                     <button
                       type="button"
                       disabled={!canPlay}
                       onClick={() => player1 && onSelectWinner(group.id, match.id, player1.id)}
-                      className={`flex-1 flex items-center justify-center gap-1.5 p-2 text-sm transition-all rounded-l-lg ${
-                        match.winnerId === player1?.id
-                          ? "bg-primary/20 text-foreground font-medium"
-                          : canPlay
-                            ? "hover:bg-primary/10 text-foreground cursor-pointer"
-                            : "text-muted-foreground"
-                      }`}
+                      className={`flex-1 flex items-center justify-center gap-1.5 p-2 text-sm transition-all rounded-l-lg ${match.winnerId === player1?.id
+                        ? "bg-primary/20 text-foreground font-medium"
+                        : canPlay
+                          ? "hover:bg-primary/10 text-foreground cursor-pointer"
+                          : "text-muted-foreground"
+                        }`}
                     >
                       {match.winnerId === player1?.id && <Trophy className="h-3 w-3 text-primary flex-shrink-0" />}
                       <span className="truncate">{player1?.name}</span>
@@ -191,13 +187,12 @@ function GroupCard({ group, tournament, onSelectWinner }: GroupCardProps) {
                       type="button"
                       disabled={!canPlay}
                       onClick={() => player2 && onSelectWinner(group.id, match.id, player2.id)}
-                      className={`flex-1 flex items-center justify-center gap-1.5 p-2 text-sm transition-all rounded-r-lg ${
-                        match.winnerId === player2?.id
-                          ? "bg-primary/20 text-foreground font-medium"
-                          : canPlay
-                            ? "hover:bg-primary/10 text-foreground cursor-pointer"
-                            : "text-muted-foreground"
-                      }`}
+                      className={`flex-1 flex items-center justify-center gap-1.5 p-2 text-sm transition-all rounded-r-lg ${match.winnerId === player2?.id
+                        ? "bg-primary/20 text-foreground font-medium"
+                        : canPlay
+                          ? "hover:bg-primary/10 text-foreground cursor-pointer"
+                          : "text-muted-foreground"
+                        }`}
                     >
                       <span className="truncate">{player2?.name}</span>
                       {match.winnerId === player2?.id && <Trophy className="h-3 w-3 text-primary flex-shrink-0" />}

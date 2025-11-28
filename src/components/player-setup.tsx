@@ -257,7 +257,7 @@ export function PlayerSetup({ onStartTournament }: PlayerSetupProps) {
                   </div>
                   <Label className="text-lg font-semibold text-foreground flex items-center gap-2">
                     <Target className="h-5 w-5" />
-                    Finale Groesse
+                    Finale Größe
                   </Label>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">Wie viele Spieler sollen in die K.O.-Phase kommen?</p>
